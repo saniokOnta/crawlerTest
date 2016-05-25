@@ -1,0 +1,72 @@
+2016-04-04 11:46:12 [scrapy] INFO: Scrapy 1.0.5 started (bot: rat)
+2016-04-04 11:46:12 [scrapy] INFO: Optional features available: ssl, http11
+2016-04-04 11:46:12 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'rat.spiders', 'SPIDER_MODULES': ['rat.spiders'], 'LOG_FILE': 'log.txt', 'BOT_NAME': 'rat'}
+2016-04-04 11:46:12 [scrapy] INFO: Enabled extensions: CloseSpider, TelnetConsole, LogStats, CoreStats, SpiderState
+2016-04-04 11:46:13 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2016-04-04 11:46:13 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2016-04-04 11:46:13 [scrapy] INFO: Enabled item pipelines: 
+2016-04-04 11:46:13 [scrapy] INFO: Spider opened
+2016-04-04 11:46:13 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2016-04-04 11:46:13 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6023
+2016-04-04 11:46:13 [scrapy] DEBUG: Crawled (200) <GET http://www.ratbv.ro/trasee-si-orare/> (referer: None)
+2016-04-04 11:46:13 [root] WARNING: URL : http://www.ratbv.ro/afisaje/1-dus.html
+2016-04-04 11:46:13 [root] WARNING: URL : <GET http://www.ratbv.ro/route/13/tour/>
+2016-04-04 11:46:13 [root] WARNING: URL : http://www.ratbv.ro/afisaje/3-dus.html
+2016-04-04 11:46:13 [root] WARNING: URL : <GET http://www.ratbv.ro/route/2/tour/>
+2016-04-04 11:46:13 [root] WARNING: URL : <GET http://www.ratbv.ro/route/14/tour/>
+2016-04-04 11:46:13 [root] WARNING: URL : http://www.ratbv.ro/afisaje/7-dus.html
+2016-04-04 11:46:13 [root] WARNING: URL : <GET http://www.ratbv.ro/route/4/tour/>
+2016-04-04 11:46:13 [root] WARNING: URL : <GET http://www.ratbv.ro/route/17/tour/>
+2016-04-04 11:46:13 [root] WARNING: URL : http://www.ratbv.ro/afisaje/8-dus.html
+2016-04-04 11:46:13 [root] WARNING: URL : http://www.ratbv.ro/afisaje/5-dus.html
+2016-04-04 11:46:13 [root] WARNING: URL : <GET http://www.ratbv.ro/route/48/tour/>
+2016-04-04 11:46:13 [root] WARNING: URL : <GET http://www.ratbv.ro/route/10/tour/>
+2016-04-04 11:46:13 [root] WARNING: URL : <GET http://www.ratbv.ro/route/5/tour/>
+2016-04-04 11:46:13 [root] WARNING: URL : <GET http://www.ratbv.ro/route/32/tour/>
+2016-04-04 11:46:13 [root] WARNING: URL : http://www.ratbv.ro/afisaje/33-dus.html
+2016-04-04 11:46:13 [root] WARNING: URL : http://www.ratbv.ro/afisaje/6-dus.html
+2016-04-04 11:46:13 [root] WARNING: URL : http://www.ratbv.ro/afisaje/41-dus.html
+2016-04-04 11:46:13 [root] WARNING: URL : <GET http://www.ratbv.ro/route/9/tour/>
+2016-04-04 11:46:13 [root] WARNING: URL : http://www.ratbv.ro/afisaje/50-dus.html
+2016-04-04 11:46:13 [root] WARNING: URL : <GET http://www.ratbv.ro/route/15/tour/>
+2016-04-04 11:46:13 [root] WARNING: URL : <GET http://www.ratbv.ro/route/34/tour/>
+2016-04-04 11:46:13 [root] WARNING: URL : <GET http://www.ratbv.ro/route/16/tour/>
+2016-04-04 11:46:13 [root] WARNING: URL : http://www.ratbv.ro/afisaje/52-dus.html
+2016-04-04 11:46:13 [root] WARNING: URL : http://www.ratbv.ro/afisaje/18-dus.html
+2016-04-04 11:46:13 [root] WARNING: URL : <GET http://www.ratbv.ro/route/18/tour/>
+2016-04-04 11:46:13 [root] WARNING: URL : <GET http://www.ratbv.ro/route/19/tour/>
+2016-04-04 11:46:13 [root] WARNING: URL : <GET http://www.ratbv.ro/route/20/tour/>
+2016-04-04 11:46:13 [root] WARNING: URL : <GET http://www.ratbv.ro/route/37/tour/>
+2016-04-04 11:46:13 [root] WARNING: URL : <GET http://www.ratbv.ro/route/21/tour/>
+2016-04-04 11:46:13 [root] WARNING: URL : <GET http://www.ratbv.ro/route/22/tour/>
+2016-04-04 11:46:13 [root] WARNING: URL : http://www.ratbv.ro/afisaje/25-dus.html
+2016-04-04 11:46:13 [root] WARNING: URL : http://www.ratbv.ro/afisaje/28-dus.html
+2016-04-04 11:46:13 [root] WARNING: URL : http://www.ratbv.ro/afisaje/28b-dus.html
+2016-04-04 11:46:13 [root] WARNING: URL : <GET http://www.ratbv.ro/route/24/tour/>
+2016-04-04 11:46:13 [root] WARNING: URL : <GET http://www.ratbv.ro/route/26/tour/>
+2016-04-04 11:46:13 [root] WARNING: URL : <GET http://www.ratbv.ro/route/27/tour/>
+2016-04-04 11:46:13 [root] WARNING: URL : <GET http://www.ratbv.ro/route/39/tour/>
+2016-04-04 11:46:13 [root] WARNING: URL : <GET http://www.ratbv.ro/route/29/tour/>
+2016-04-04 11:46:13 [root] WARNING: URL : <GET http://www.ratbv.ro/route/30/tour/>
+2016-04-04 11:46:13 [root] WARNING: URL : <GET http://www.ratbv.ro/route/31/tour/>
+2016-04-04 11:46:13 [root] WARNING: URL : <GET http://www.ratbv.ro/route/33/tour/>
+2016-04-04 11:46:13 [scrapy] INFO: Closing spider (finished)
+2016-04-04 11:46:13 [scrapy] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 226,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 7314,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2016, 4, 4, 8, 46, 13, 464000),
+ 'log_count/DEBUG': 2,
+ 'log_count/INFO': 7,
+ 'log_count/WARNING': 41,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2016, 4, 4, 8, 46, 13, 239000)}
+2016-04-04 11:46:13 [scrapy] INFO: Spider closed (finished)
