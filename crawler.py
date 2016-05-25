@@ -1,16 +1,22 @@
-from lxml import html
+from lxml import etree
 import urllib2 
 from StringIO import StringIO
 
 class Response:
-    def navigateToUrl(self,url):
-        html.parse(StringIO(urllib2.urlopen(url).read()))
+    def __init__(self):
+	tree =None 
 
-    def getValueByXpath(seld,xpath):
-        response = html.xpath(xpaht)
-        print('-------intri pe aici')
-        for i in range(0,len(response)):
-            print (response[i])
+    def navigateToUrl(self,url):
+        self.tree = etree.parse(StringIO(urllib2.urlopen(url).read()))
+
+    def getValueByXpath(self,xpath):
+        l = self.tree.xpath(xpath)
+	return l[0] if l else None
+
+    def getValuesByXpath(self,xpath):
+	l = self.tree.xpath(xpath)
+	return l
+
 
        
 
