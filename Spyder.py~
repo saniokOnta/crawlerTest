@@ -19,9 +19,9 @@ class Response():
         self.tree = etree.parse(StringIO(htmlSource),p)
         return self
 
-    def xpath(self,xpath,elementListCallBack = None):
+    def xpath(self,xpath,elementListCallBack = list_to_string):
         l = self.tree.xpath(xpath)
-        return elementListCallBack(l) if elementListCallBack else self.list_to_string(l)
+        return elementListCallBack(l)
 
     def list_to_string(self,lst):
         new_lst = []

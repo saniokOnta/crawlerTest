@@ -24,8 +24,6 @@ class rat_Crawler:
     def parse_line(self,lineUrl):    
         if 'tour' in lineUrl:
             lineUrl = self.get_clean_line_url(lineUrl)
-        else :
-            lineUrl = self.get_absolute_url(lineUrl)
         print (lineUrl)
 
 
