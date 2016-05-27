@@ -4,9 +4,9 @@ from StringIO import StringIO
 
 class  Scrapy():
     
-    def Request(self,url):
+    def Request(self,url,callBack = None):
         r = Response().load(urllib2.urlopen(url).read())
-        return r
+        return callBack(r) if callBack else r
 
 
 

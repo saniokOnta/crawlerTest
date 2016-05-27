@@ -1,7 +1,7 @@
 gKey = 'AIzaSyD6HTdJLDVNyYQZnDp1kZcG0Pks3sRRNh4'
 days =['mon_fri','saturday','sunday']
 lineNameNamePath = '//div[@id="web_traseu"]/b/text()'
-stationPath = '//div[@id="statie_web"]/b/text()'
+stationNamePath = '//div[@id="statie_web"]/b/text()'
 lineNameNrPath ='//div[@id="linia_web"]/b/text()'
 hasExtraStationsPath = '//div[@id="nota"]'
 hasHandicapRidePath = '//div[contains(@id,"dizabilitati")]'
