@@ -5,6 +5,7 @@ class rat_Crawler:
     def __init__(self):
         self.scrapy = Scrapy()
         self._lines = []
+        self.days =['mon_fri','saturday','sunday']
 
     def log(self,message):
         with open("log.txt", "a") as f:
@@ -57,7 +58,8 @@ class rat_Crawler:
                 lineUrl = l[0] if l else None
         return self.get_absolute_url(lineUrl)
     def get_Inertext(self,response,xpath):
-        return response.xpath(xpath)[0]
+        l = response.xpath(xpath)
+        return l[0] if len(l)>0 else None
     
     def parse_line(self,lineUrl):
         lineUrl = self.get_clean_line_url(lineUrl)
@@ -66,8 +68,28 @@ class rat_Crawler:
         stationLst = r.xpath('//div[contains(@class,"list")]//a/@href')
         self.parse_stations(stationLst,lineUrl)
 
+    def get_node_list(self,lst):
+        return lst
+
+
+    def getDaySchedulerHanAndExtra(self,response,dayIndex):
+        count = len(response.xpath(xpaths.hoursPath.format(dayIndex)))-1
+        li = []
+        for i in range(count):
+            minutes = []
+            for n in response.xpath(xpaths.minXpath.format(dayIndex,i+2),elementListCallBack=self.get_node_list):
+                hand = False;
+                extraStat = False;
+                if n.xpath('@id')[0] == 'web_min_blue':
+                    hand = True
+                if len(n.xpath('b'))>0:
+                    extraStat = True
+                minutes.append({'min' : n.xpath('text()')[0].strip(),'hasHandicapRide' : hand,'hasExtraStations' : extraStat})
+            li.append({ self.get_Inertext(response,xpaths.hourXpath.format(dayIndex,i+2)).strip(): minutes })
+        return li
+
     def parse_stations(self,stationLst,lineUrl):
-        line_model = {'name' : None,'nr' : None,'stations' : []}        
+        line_model = {'name' : None,'nr' : None,'hasExtraStations' : None,'hasHandicapPalces' : None,'stations' : []}        
         for s in stationLst:
             if 'intors.html' in s:
                 self._lines.append(line_model)
@@ -82,23 +104,32 @@ class rat_Crawler:
                 line_model['name'] = self.get_Inertext(r,xpaths.lineNamePath)
             if not(line_model['nr']):
                 line_model['nr'] = self.get_Inertext(r,xpaths.lineNameNrPath)
-            line_model['stations'].append(r.xpath(xpaths.stationNamePath)[0])
+            if not(line_model['hasExtraStations']):
+                line_model['hasExtraStations'] = True if self.get_Inertext(r,xpaths.hasExtraStationsPath) else False
+            if not(line_model['hasHandicapPalces']):
+                line_model['hasHandicapPalces'] = True if self.get_Inertext(r,xpaths.hasHandicapRidePath) else False
+            station = {}
+            program = {}
+            station['name'] =  self.get_Inertext(r,xpaths.stationNamePath)
+            for i in range(3):
+                program[self.days[i]] = self.getDaySchedulerHanAndExtra(r, i+1)
+            station['program'] = program
+            line_model['stations'].append(station)
         self._lines.append(line_model)
 
-    def printLines(self):
-        with open('results.json', 'w') as f:
-            json.dump(self._lines, f)
-        print (self._lines)
+    def get_result(self):
+        response = self.scrapy.Request(xpaths.startUrl)
+        lst = response.xpath(xpaths.allLinesXpath)
+        for i in range(0,len(lst)):
+            print ('start parsing ------------>' + str(i))
+            self.parse_line(lst[i])
+        return self._lines
 
 def doWork():
     c = rat_Crawler()
-    response = c.scrapy.Request(xpaths.startUrl)
-    lst = response.xpath(xpaths.allLinesXpath)
-    #c.parse_line('/afisaje/34-dus.html')
-    for i in range(0,len(lst)):
-        print ('start parsing ------------>' + str(i))
-        c.parse_line(lst[i])
-    c.printLines()
+    r = c.get_result()
+    with open('results.json', 'w') as f:
+            json.dump(r, f)
     #c.print_s()
 
 if __name__ == "__main__":

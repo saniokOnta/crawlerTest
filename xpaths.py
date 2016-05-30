@@ -3,7 +3,7 @@ days =['mon_fri','saturday','sunday']
 lineNamePath = '//div[@id="web_traseu"]/b/text()'
 stationNamePath = '//div[@id="statie_web"]/b/text()'
 lineNameNrPath ='//div[@id="linia_web"]/b/text()'
-hasExtraStationsPath = '//div[@id="nota"]'
+hasExtraStationsPath = '//div[@id="nota"]/strong[contains(text(),"MARCATE CU *")]'
 hasHandicapRidePath = '//div[contains(@id,"dizabilitati")]'
 minXpath = '//div[@id="tabel2"][{0}]/div[@id="web_class_minutes"][{1}]/div'
 hourXpath = '//div[@id="tabel2"][{0}]/div[@id="web_class_hours"][{1}]/text()'
